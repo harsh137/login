@@ -8,48 +8,48 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailCtrl = TextEditingController();
-  TextEditingController _passCtrl = TextEditingController();
-  @override
+  final TextEditingController _emailCtrl = TextEditingController();
+  final TextEditingController _passCtrl = TextEditingController();
   bool _ispassVisible = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(32.0),
+          padding: const EdgeInsets.all(32.0),
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 50, bottom: 50),
+                padding: const EdgeInsets.only(top: 50, bottom: 50),
                 child: Image.asset(
                   "assets/logo.png",
                   height: 200,
                   width: 200,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "Login",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                     color: Color(0xff11459e)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
-              Divider(
+              const Divider(
                 color: Color(0xff11459e),
                 height: 20,
                 thickness: 5,
                 indent: 60,
                 endIndent: 60,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Material(
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailCtrl,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     border: InputBorder.none,
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Material(
@@ -89,7 +89,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Colors.grey,
                       ),
                       onPressed: () {
-                        // Update the state i.e. toogle the state of passwordVisible variable
                         setState(() {
                           _ispassVisible = !_ispassVisible;
                         });
@@ -98,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -106,26 +105,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 40,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     "LOGIN",
                     style: TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xff11459e), // Background color
+                    primary: const Color(0xff11459e), // Background color
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 2,
               ),
               Align(
                   alignment: Alignment.bottomLeft,
                   child: TextButton(
-                      onPressed: () {}, child: Text("Forget Password?"))),
-              SizedBox(
+                      onPressed: () {}, child: const Text("Forget Password?"))),
+              const SizedBox(
                 height: 20,
               ),
-              Divider(
+              const Divider(
                 color: Colors.grey,
                 height: 40,
                 thickness: 1,
