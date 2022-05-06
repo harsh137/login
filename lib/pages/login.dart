@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_page/controller/api.dart';
+import 'package:login_page/controller/tabs.dart';
 import 'package:login_page/controller/user_model.dart';
-import 'package:login_page/pages/home.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -87,7 +87,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 elevation: 10,
                 shadowColor: Colors.blue[200],
                 child: TextFormField(
-                  //onSaved: (input) => requestModel.password = input!,
                   obscureText: _ispassVisible,
                   controller: _passCtrl,
                   decoration: InputDecoration(
@@ -124,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ApiService api = new ApiService();
                     api.login(requestModel).then((value) {
                       if (value.success == true && value.responsecode == 200) {
-                        Get.to(() => Myhome());
+                        Get.offAll(() => BottomNavi());
                       } else {
                         Get.showSnackbar(GetSnackBar(
                           message: value.message,
